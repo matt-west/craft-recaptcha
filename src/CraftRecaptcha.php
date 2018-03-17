@@ -10,7 +10,7 @@
 
 namespace mattwest\craftrecaptcha;
 
-use mattwest\craftrecaptcha\services\CraftRecaptchaService as CraftRecaptchaServiceService;
+use mattwest\craftrecaptcha\services\CraftRecaptchaService;
 use mattwest\craftrecaptcha\variables\CraftRecaptchaVariable;
 use mattwest\craftrecaptcha\models\Settings;
 
@@ -40,7 +40,7 @@ use yii\base\ModelEvent;
  * @package   CraftRecaptcha
  * @since     1.0.0
  *
- * @property  CraftRecaptchaServiceService $craftRecaptchaService
+ * @property  CraftRecaptchaService $craftRecaptchaService
  * @property  Settings $settings
  * @method    Settings getSettings()
  */
