@@ -31,8 +31,8 @@
         }
     },
     "extra": {
-        "name": "Craft reCAPTCHA",
-        "handle": "craft-re-captcha",
+        "name": "reCAPTCHA",
+        "handle": "recaptcha",
         "hasCpSettings": true,
         "hasCpSection": false,
         "changelogUrl": "https://raw.githubusercontent.com/matt-west/craft-recaptcha/master/CHANGELOG.md",

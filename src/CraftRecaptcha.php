@@ -144,7 +144,7 @@ class CraftRecaptcha extends Plugin
  */
         Craft::info(
             Craft::t(
-                'craft-re-captcha',
+                'recaptcha',
                 '{name} plugin loaded',
                 ['name' => $this->name]
             ),
@@ -174,7 +174,7 @@ class CraftRecaptcha extends Plugin
     protected function settingsHtml(): string
     {
         return Craft::$app->view->renderTemplate(
-            'craft-re-captcha/settings',
+            'recaptcha/settings',
             [
                 'settings' => $this->getSettings()
             ]

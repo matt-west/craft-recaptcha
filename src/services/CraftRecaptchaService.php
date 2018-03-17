@@ -49,7 +49,7 @@ class CraftRecaptchaService extends Component
         $oldMode = \Craft::$app->view->getTemplateMode();
         \Craft::$app->view->setTemplateMode(View::TEMPLATE_MODE_CP);
 
-        $html = \Craft::$app->view->renderTemplate('craft-re-captcha/_recaptcha', $vars);
+        $html = \Craft::$app->view->renderTemplate('recaptcha/_recaptcha', $vars);
 
         \Craft::$app->view->setTemplateMode($oldMode);
 
