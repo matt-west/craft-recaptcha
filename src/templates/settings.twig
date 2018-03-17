@@ -1,0 +1,34 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Craft reCAPTCHA plugin for Craft CMS 3.x
+ *
+ * Craft reCAPTCHA Settings.twig
+ *
+ * @author    Matt West
+ * @copyright Copyright (c) 2018 Matt West
+ * @link      https://mattwest.io
+ * @package   CraftRecaptcha
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{{ forms.textField({
+    label: 'Site Key',
+    instructions: 'Enter your reCAPTCHA site key.',
+    id: 'siteKey',
+    name: 'siteKey',
+    value: settings['siteKey'],
+    required: true})
+}}
+
+{{ forms.textField({
+    label: 'Secret Key',
+    instructions: 'Enter your reCAPTCHA secret key.',
+    id: 'secretKey',
+    name: 'secretKey',
+    value: settings['secretKey'],
+    required: true})
+}}

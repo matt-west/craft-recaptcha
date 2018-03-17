@@ -1,0 +1,44 @@
+{
+    "name": "matt-west/craft-recaptcha",
+    "description": "Integrate Google’s reCAPTCHA into your forms.",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "craft recaptcha"
+    ],
+    "support": {
+        "docs": "https://github.com/matt-west/craft-recaptcha/blob/master/README.md",
+        "issues": "https://github.com/matt-west/craft-recaptcha/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matt West",
+            "homepage": "https://mattwest.io"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+          "mattwest\\craftrecaptcha\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Craft reCAPTCHA",
+        "handle": "craft-re-captcha",
+        "hasCpSettings": true,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/matt-west/craft-recaptcha/master/CHANGELOG.md",
+        "components": {
+            "craftRecaptchaService": "mattwest\\craftrecaptcha\\services\\CraftRecaptchaService"
+        },
+        "class": "mattwest\\craftrecaptcha\\CraftRecaptcha"
+    }
+}
