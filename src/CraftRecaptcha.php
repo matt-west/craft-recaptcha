@@ -109,7 +109,7 @@ class CraftRecaptcha extends Plugin
         );
 
         // Set up contact form hook.
-        if (class_exists('Submission')) {
+        if (class_exists(Submission::class)) {
             Event::on(Submission::class, Submission::EVENT_BEFORE_VALIDATE, function(ModelEvent $e) {
                 /** @var Submission $submission */
                 $submission = $e->sender;
