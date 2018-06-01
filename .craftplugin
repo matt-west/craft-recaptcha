@@ -1,1 +1,30 @@
-{"pluginName":"Craft reCAPTCHA","pluginDescription":"Integrate Google’s reCAPTCHA into your forms.","pluginVersion":"1.0.0","pluginAuthorName":"Matt West","pluginVendorName":"mattwest","pluginAuthorUrl":"https://mattwest.io","pluginAuthorGithub":"matt-west","codeComments":"yes","pluginComponents":["controllers","services","settings","twigextensions","variables"],"consolecommandName":"","controllerName":"","cpsectionName":"","elementName":"","fieldName":"","modelName":"","purchasableName":"","recordName":"","serviceName":"","taskName":"","utilityName":"","widgetName":"","apiVersion":"api_version_3_0"}
+{
+  "pluginName": "Craft reCAPTCHA",
+  "pluginDescription": "Integrate Google’s reCAPTCHA into your forms.",
+  "pluginVersion": "1.0.1",
+  "pluginAuthorName": "Matt West",
+  "pluginVendorName": "mattwest",
+  "pluginAuthorUrl": "https://mattwest.io",
+  "pluginAuthorGithub": "matt-west",
+  "codeComments": "yes",
+  "pluginComponents": [
+    "controllers",
+    "services",
+    "settings",
+    "twigextensions",
+    "variables"
+  ],
+  "consolecommandName": "",
+  "controllerName": "",
+  "cpsectionName": "",
+  "elementName": "",
+  "fieldName": "",
+  "modelName": "",
+  "purchasableName": "",
+  "recordName": "",
+  "serviceName": "",
+  "taskName": "",
+  "utilityName": "",
+  "widgetName": "",
+  "apiVersion": "api_version_3_0"
+}

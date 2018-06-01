@@ -109,20 +109,21 @@ class CraftRecaptcha extends Plugin
         );
 
         // Set up contact form hook.
+        if (class_exists('Submission')) {
+            Event::on(Submission::class, Submission::EVENT_BEFORE_VALIDATE, function(ModelEvent $e) {
+                /** @var Submission $submission */
+                $submission = $e->sender;
 
-        Event::on(Submission::class, Submission::EVENT_BEFORE_VALIDATE, function(ModelEvent $e) {
-            /** @var Submission $submission */
-            $submission = $e->sender;
+                $captcha = Craft::$app->getRequest()->getParam('g-recaptcha-response');
 
-            $captcha = Craft::$app->getRequest()->getParam('g-recaptcha-response');
+                $validates = CraftRecaptcha::$plugin->craftRecaptchaService->verify($captcha);
 
-            $validates = CraftRecaptcha::$plugin->craftRecaptchaService->verify($captcha);
-
-            if (!$validates) {
-                $submission->addError('recaptcha', 'Please verify you are human.');
-                $e->isValid = false;
-            }
-        });
+                if (!$validates) {
+                    $submission->addError('recaptcha', 'Please verify you are human.');
+                    $e->isValid = false;
+                }
+            });
+        }
 
 /**
  * Logging in Craft involves using one of the following methods:
