@@ -48,6 +48,15 @@ if ($validates) {
 }
 ```
 
+### Automated testing and reCAPTCHA
+
+If you need to run automated tests against your forms use the following keys. Verification requests using these credentials will always pass.
+
+Site key: `6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI`  
+Secret key: `6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe`
+
+[Documentation](https://developers.google.com/recaptcha/docs/faq#id-like-to-run-automated-tests-with-recaptcha-v2-what-should-i-do)
+
 ## Using Craft reCAPTCHA
 
 Add the following tag to your form where you’d like the reCAPTCHA to be displayed.
