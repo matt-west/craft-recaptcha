@@ -43,4 +43,11 @@ class CraftRecaptchaVariable
     {
       return CraftRecaptcha::$plugin->craftRecaptchaService->render();
     }
+
+    public function sitekey()
+    {
+      $settings = CraftRecaptcha::$plugin->getSettings();
+
+      return $settings->attributes['siteKey'];
+    }
 }
