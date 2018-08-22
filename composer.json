@@ -2,7 +2,7 @@
     "name": "matt-west/craft-recaptcha",
     "description": "Integrate Google’s reCAPTCHA into your forms.",
     "type": "craft-plugin",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "keywords": [
         "craft",
         "cms",

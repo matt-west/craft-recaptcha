@@ -75,6 +75,6 @@ You can also create the reCAPTCHA element yourself using the `sitekey` template 
 </div>
 ```
 
-
+---
 
 Brought to you by [Matt West](https://mattwest.io)
