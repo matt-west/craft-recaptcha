@@ -65,7 +65,7 @@ Add the following tag to your form where you’d like the reCAPTCHA to be displa
 {{ craft.recaptcha.render() }}
 ```
 
-You can also create the reCAPTCHA element yourself using the `sitekey` template variable. This is especially useful for implementing invisible recaptcha
+You can also create the reCAPTCHA element yourself using the `sitekey` template variable. This is especially useful for implementing invisible recaptcha.
 
 ```twig
 <div class="g-recaptcha"
