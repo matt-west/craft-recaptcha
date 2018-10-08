@@ -26,4 +26,5 @@ return [
     'Secret Key' => 'Secret Key',
     'Enter your reCAPTCHA site key.' => 'Enter your reCAPTCHA site key.',
     'Enter your reCAPTCHA secret key.' => 'Enter your reCAPTCHA secret key.',
+    'Validate contact forms?' => 'Validate contact forms?',
 ];

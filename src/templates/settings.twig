@@ -32,3 +32,14 @@
     value: settings['secretKey'],
     required: true})
 }}
+
+
+<hr>
+
+{{ forms.lightswitchField({
+    label: 'Validate contact forms?',
+    instructions: 'Enable to automatically validate reCAPTCHAs when using the official [Craft CMS contact form plugin](https://github.com/craftcms/contact-form).',
+    id: 'validateContactForm',
+    name: 'validateContactForm',
+    on: settings['validateContactForm']})
+}}

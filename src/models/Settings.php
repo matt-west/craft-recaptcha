@@ -48,6 +48,13 @@ class Settings extends Model
      */
     public $secretKey = '';
 
+    /**
+     * Validate ContactForm submissions
+     * 
+     * @var bool
+     */
+    public $validateContactForm = true;
+
     // Public Methods
     // =========================================================================
 
