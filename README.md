@@ -7,6 +7,8 @@ Includes support for the CraftCMS [Contact Form](https://github.com/craftcms/con
 
 This plugin requires Craft CMS 3.0.0-beta.23 or later.
 
+**This plugin supports reCAPTCHA v2 only.**
+
 ## Installation
 
 To install the plugin, follow these instructions.
