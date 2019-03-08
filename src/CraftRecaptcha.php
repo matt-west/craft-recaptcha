@@ -10,6 +10,7 @@
 
 namespace mattwest\craftrecaptcha;
 
+use craft\events\UserEvent;
 use mattwest\craftrecaptcha\services\CraftRecaptchaService;
 use mattwest\craftrecaptcha\variables\CraftRecaptchaVariable;
 use mattwest\craftrecaptcha\models\Settings;
@@ -22,6 +23,10 @@ use craft\web\UrlManager;
 use craft\web\twig\variables\CraftVariable;
 use craft\events\RegisterUrlRulesEvent;
 use craft\contactform\models\Submission;
+
+use craft\elements\User;
+use \craft\services\Elements;
+use craft\events\ElementEvent;
 
 use yii\base\Event;
 use yii\base\ModelEvent;
@@ -123,6 +128,25 @@ class CraftRecaptcha extends Plugin
                 if (!$validates) {
                     $submission->addError('recaptcha', 'Please verify you are human.');
                     $e->isValid = false;
+                }
+            });
+        }
+
+        if ($settings->validateUserRegistrationForm) {
+            Event::on(User::class, User::EVENT_BEFORE_SAVE, function(ModelEvent $e) {
+                $sender = $e->sender;
+
+                // Only validate on the initial registration...meaning must be a front end request and a new User element being saved
+                if(Craft::$app->request->isSiteRequest && $e->isNew) {
+
+                    $captcha = Craft::$app->getRequest()->getParam('g-recaptcha-response');
+
+                    $validates = CraftRecaptcha::$plugin->craftRecaptchaService->verify($captcha);
+
+                    if (!$validates) {
+                        $sender->addError('recaptcha', 'Please verify you are human.');
+                        $e->isValid = false;
+                    }
                 }
             });
         }

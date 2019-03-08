@@ -55,6 +55,13 @@ class Settings extends Model
      */
     public $validateContactForm = true;
 
+    /**
+     * Validate User registration form submissions
+     *
+     * @var bool
+     */
+    public $validateUserRegistrationForm= true;
+
     // Public Methods
     // =========================================================================
 
