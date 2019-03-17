@@ -25,7 +25,7 @@ use craft\events\RegisterUrlRulesEvent;
 use craft\contactform\models\Submission;
 
 use craft\elements\User;
-use \craft\services\Elements;
+use craft\services\Elements;
 use craft\events\ElementEvent;
 
 use yii\base\Event;

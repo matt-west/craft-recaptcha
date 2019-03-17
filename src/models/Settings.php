@@ -60,7 +60,7 @@ class Settings extends Model
      *
      * @var bool
      */
-    public $validateUserRegistrationForm= true;
+    public $validateUserRegistrationForm = false;
 
     // Public Methods
     // =========================================================================

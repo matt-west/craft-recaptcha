@@ -27,6 +27,6 @@ return [
     "siteKey" => "",
     "secretKey" => "",
     "validateContactForm" => true,
-    "validateUserRegistrationForm" => true,
+    "validateUserRegistrationForm" => false,
     
 ];
