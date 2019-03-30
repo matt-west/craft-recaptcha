@@ -35,15 +35,19 @@ class CraftRecaptchaService extends Component
     // Public Methods
     // =========================================================================
 
-    public function render()
+    public function render(array $options = [])
     {
         $settings = CraftRecaptcha::$plugin->getSettings();
 
         \Craft::$app->view->registerJsFile('https://www.google.com/recaptcha/api.js');
 
+        $defaultOptions = [
+            'sitekey' => $settings->attributes['siteKey']
+        ];
+
         $vars = array(
             'id' => 'gRecaptchaContainer',
-            'siteKey' => $settings->attributes['siteKey']
+            'options' => array_merge($defaultOptions, $options)
         );
 
         $oldMode = \Craft::$app->view->getTemplateMode();
