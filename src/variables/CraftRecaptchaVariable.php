@@ -41,7 +41,7 @@ class CraftRecaptchaVariable
      */
     public function render(array $options = [])
     {
-      return CraftRecaptcha::$plugin->craftRecaptchaService->render();
+      return CraftRecaptcha::$plugin->craftRecaptchaService->render($options);
     }
 
     public function sitekey()
