@@ -36,12 +36,12 @@ class CraftRecaptchaVariable
      *
      *    {{ craft.recaptcha.render() }}
      *
-     * @param null $params
+     * @param array $options
      * @return string
      */
-    public function render()
+    public function render(array $options = [])
     {
-      return CraftRecaptcha::$plugin->craftRecaptchaService->render();
+      return CraftRecaptcha::$plugin->craftRecaptchaService->render($options);
     }
 
     public function sitekey()
