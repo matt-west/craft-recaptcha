@@ -50,10 +50,17 @@ class Settings extends Model
 
     /**
      * Validate ContactForm submissions
-     * 
+     *
      * @var bool
      */
     public $validateContactForm = true;
+
+    /**
+     * Validate User Registration submissions
+     *
+     * @var bool
+     */
+    public $validateUserRegistrationForm = false;
 
     // Public Methods
     // =========================================================================

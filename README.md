@@ -1,7 +1,7 @@
 # Craft reCAPTCHA plugin for Craft CMS 3.x
 
 Integrate Google’s reCAPTCHA into your forms.  
-Includes support for the CraftCMS [Contact Form](https://github.com/craftcms/contact-form) plugin.
+Includes support for the CraftCMS [Contact Form](https://github.com/craftcms/contact-form) plugin and User Registration form.
 
 ## Requirements
 

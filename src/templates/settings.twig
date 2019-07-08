@@ -33,7 +33,6 @@
     required: true})
 }}
 
-
 <hr>
 
 {{ forms.lightswitchField({
@@ -42,4 +41,13 @@
     id: 'validateContactForm',
     name: 'validateContactForm',
     on: settings['validateContactForm']})
+}}
+
+<hr>
+
+{{ forms.lightswitchField({
+    label: 'Validate User Registration form?',
+    id: 'validateUserRegistrationForm',
+    name: 'validateUserRegistrationForm',
+    on: settings['validateUserRegistrationForm']})
 }}

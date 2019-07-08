@@ -17,6 +17,7 @@ use mattwest\craftrecaptcha\models\Settings;
 use Craft;
 use craft\base\Plugin;
 use craft\services\Plugins;
+use craft\elements\User;
 use craft\events\PluginEvent;
 use craft\web\UrlManager;
 use craft\web\twig\variables\CraftVariable;
@@ -108,11 +109,16 @@ class CraftRecaptcha extends Plugin
             }
         );
 
-        // Set up contact form hook.
         $settings = CraftRecaptcha::$plugin->getSettings();
 
+        // Set up contact form hook.
+
         if (class_exists(Submission::class) && $settings->validateContactForm) {
-            Event::on(Submission::class, Submission::EVENT_BEFORE_VALIDATE, function(ModelEvent $e) {
+            Event::on(
+               Submission::class,
+               Submission::EVENT_BEFORE_VALIDATE,
+               function(ModelEvent $e) {
+
                 /** @var Submission $submission */
                 $submission = $e->sender;
 
@@ -124,8 +130,36 @@ class CraftRecaptcha extends Plugin
                     $submission->addError('recaptcha', 'Please verify you are human.');
                     $e->isValid = false;
                 }
+
             });
         }
+
+        // Set up user registration form hook.
+
+        if ($settings->validateUserRegistrationForm) {
+
+            Event::on(
+               User::class,
+               User::EVENT_BEFORE_SAVE,
+               function (Event $e) {
+                  if($e->isNew) {
+
+                     $submission = $e->sender;
+
+                     $captcha = Craft::$app->getRequest()->getParam('g-recaptcha-response');
+
+                     $validates = CraftRecaptcha::$plugin->craftRecaptchaService->verify($captcha);
+
+                     if (!$validates) {
+                         $submission->addError('recaptcha', 'Please verify you are human.');
+                         $e->isValid = false;
+                     }
+
+                  }
+               }
+            );
+
+         }
 
 /**
  * Logging in Craft involves using one of the following methods:
