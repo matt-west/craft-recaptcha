@@ -14,6 +14,7 @@ use mattwest\craftrecaptcha\CraftRecaptcha;
 
 use Craft;
 use craft\base\Model;
+use craft\behaviors\EnvAttributeParserBehavior;
 
 /**
  * CraftRecaptcha Settings Model
@@ -50,13 +51,41 @@ class Settings extends Model
 
     /**
      * Validate ContactForm submissions
-     * 
+     *
      * @var bool
      */
     public $validateContactForm = true;
 
+
+
     // Public Methods
     // =========================================================================
+
+  /**
+   * @return string the parsed site key (e.g. 'XXXXXXXXXXX')
+   */
+  public function getSiteKey(): string
+  {
+    return Craft::parseEnv($this->siteKey);
+  }
+
+  /**
+   * @return string the parsed secret key (e.g. 'XXXXXXXXXXX')
+   */
+  public function getSecretKey(): string
+  {
+    return Craft::parseEnv($this->secretKey);
+  }
+
+  public function behaviors()
+  {
+    return [
+        'parser' => [
+            'class' => EnvAttributeParserBehavior::class,
+            'attributes' => ['siteKey', 'secretKey'],
+        ],
+    ];
+  }
 
     /**
      * Returns the validation rules for attributes.

@@ -15,22 +15,24 @@
 
 {% import "_includes/forms" as forms %}
 
-{{ forms.textField({
+{{ forms.autosuggestField({
     label: 'Site Key',
     instructions: 'Enter your reCAPTCHA site key.',
     id: 'siteKey',
     name: 'siteKey',
     value: settings['siteKey'],
-    required: true})
+    required: true,
+    suggestEnvVars: true})
 }}
 
-{{ forms.textField({
+{{ forms.autosuggestField({
     label: 'Secret Key',
     instructions: 'Enter your reCAPTCHA secret key.',
     id: 'secretKey',
     name: 'secretKey',
     value: settings['secretKey'],
-    required: true})
+    required: true,
+    suggestEnvVars: true})
 }}
 
 
