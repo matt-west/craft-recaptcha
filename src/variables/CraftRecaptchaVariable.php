@@ -48,6 +48,6 @@ class CraftRecaptchaVariable
     {
       $settings = CraftRecaptcha::$plugin->getSettings();
 
-      return $settings->attributes['siteKey'];
+      return $settings->getSiteKey();
     }
 }
