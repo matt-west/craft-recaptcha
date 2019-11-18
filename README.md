@@ -1,11 +1,11 @@
 # Craft reCAPTCHA plugin for Craft CMS 3.x
 
-Integrate Google’s reCAPTCHA into your forms.  
+Integrate Google’s reCAPTCHA into your forms.
 Includes support for the CraftCMS [Contact Form](https://github.com/craftcms/contact-form) plugin.
 
 ## Requirements
 
-This plugin requires Craft CMS 3.0.0-beta.23 or later.
+This plugin requires Craft CMS 3.1 or later.
 
 **This plugin supports reCAPTCHA v2 only.**
 
@@ -54,7 +54,7 @@ if ($validates) {
 
 If you need to run automated tests against your forms use the following keys. Verification requests using these credentials will always pass.
 
-Site key: `6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI`  
+Site key: `6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI`
 Secret key: `6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe`
 
 [Documentation](https://developers.google.com/recaptcha/docs/faq#id-like-to-run-automated-tests-with-recaptcha-v2-what-should-i-do)
