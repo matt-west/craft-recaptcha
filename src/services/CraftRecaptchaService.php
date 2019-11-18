@@ -42,7 +42,7 @@ class CraftRecaptchaService extends Component
         \Craft::$app->view->registerJsFile('https://www.google.com/recaptcha/api.js');
 
         $defaultOptions = [
-            'sitekey' => $settings->attributes['siteKey']
+            'siteKey' => $settings->getSiteKey()
         ];
 
         $vars = array(
@@ -66,7 +66,7 @@ class CraftRecaptchaService extends Component
 
       $settings = CraftRecaptcha::$plugin->getSettings();
       $params = array(
-          'secret' =>  $settings['secretKey'],
+          'secret' =>  $settings->getSecretKey(),
           'response' => $data
       );
 
