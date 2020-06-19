@@ -50,6 +50,18 @@ if ($validates) {
 }
 ```
 
+Or alternatively, use the in-built verification controller action to verify the request before forwarding it on to the intended action.
+
+For example, the following fields would verify the reCAPTCHA and then pass the request to the login controller action:
+
+```twig
+<input type="hidden" name="action" value="recaptcha/recaptcha/verify-submission">
+<input type="hidden" name="verified-action" value="users/login">
+{{ craft.recaptcha.render() }}
+```
+
+Set the `action` field to be `recaptcha/recaptcha/verify-submission` and the `verified-action` field to be the intended controller action you want to trigger. This will forward all other fields and parameters to the intended controller action.
+
 ### Automated testing and reCAPTCHA
 
 If you need to run automated tests against your forms use the following keys. Verification requests using these credentials will always pass.
