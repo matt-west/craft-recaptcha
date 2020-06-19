@@ -18,12 +18,12 @@ class RecaptchaController extends Controller
 	public function actionVerifySubmission()
 	{
 		// ensure the request is a post
-        $this->requirePostRequest();
-        
-        // grab the request object
-        $request = Craft::$app->getRequest();
-        
-        // grab the intended action (required)
+		$this->requirePostRequest();
+		
+		// grab the request object
+		$request = Craft::$app->getRequest();
+		
+		// grab the intended action (required)
 		$action = $request->getRequiredParam('verified-action');
 		
 		// grab the recaptcha response (required)
@@ -36,8 +36,8 @@ class RecaptchaController extends Controller
 		if ($verified) {
 			return Controller::run('/' . $action, func_get_args()); // run the intended action (add / to force it's scope to be outside the plugin) with all the params passed to this controller action
 		} else {
-            Craft::$app->getSession()->setError('Unable to verify your submission.');
-            return null;
+			Craft::$app->getSession()->setError('Unable to verify your submission.');
+			return null;
 		}
 	}
 }
