@@ -16,8 +16,8 @@
 {% import "_includes/forms" as forms %}
 
 {{ forms.autosuggestField({
-    label: 'Site Key',
-    instructions: 'Enter your reCAPTCHA site key.',
+    label: 'Site Key'|t('recaptcha'),
+    instructions: 'Enter your reCAPTCHA site key.'|t('recaptcha'),
     id: 'siteKey',
     name: 'siteKey',
     value: settings['siteKey'],
@@ -26,8 +26,8 @@
 }}
 
 {{ forms.autosuggestField({
-    label: 'Secret Key',
-    instructions: 'Enter your reCAPTCHA secret key.',
+    label: 'Secret Key'|t('recaptcha'),
+    instructions: 'Enter your reCAPTCHA secret key.'|t('recaptcha'),
     id: 'secretKey',
     name: 'secretKey',
     value: settings['secretKey'],
@@ -39,8 +39,8 @@
 <hr>
 
 {{ forms.lightswitchField({
-    label: 'Validate contact forms?',
-    instructions: 'Enable to automatically validate reCAPTCHAs when using the official [Craft CMS contact form plugin](https://github.com/craftcms/contact-form).',
+    label: 'Validate contact forms?'|t('recaptcha'),
+    instructions: 'Enable to automatically validate reCAPTCHAs when using the official [Craft CMS contact form plugin](https://github.com/craftcms/contact-form).'|t('recaptcha'),
     id: 'validateContactForm',
     name: 'validateContactForm',
     on: settings['validateContactForm']})
