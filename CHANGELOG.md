@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.5.2 - 2021-06-01
+### Added
+- Added Guzzle 7 compatibility. (Thanks [bossanova808](https://github.com/bossanova808)!)
+
 ## 1.5.1 - 2020-12-07
 ### Added
 - Added German translation. (Thanks [MDXDave](https://github.com/MDXDave)!)
