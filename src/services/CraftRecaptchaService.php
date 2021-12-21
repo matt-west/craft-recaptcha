@@ -70,10 +70,12 @@ class CraftRecaptchaService extends Component
           'response' => $data
       );
 
-      $ip = Craft::$app->getRequest()->userIP;
+      if ($settings->shareUserIPs) {
+        $ip = Craft::$app->getRequest()->userIP;
 
-      if ($ip) {
-          $params['remoteip'] = $ip;
+        if ($ip) {
+            $params['remoteip'] = $ip;
+        }
       }
 
       $client = new GuzzleHttp\Client();

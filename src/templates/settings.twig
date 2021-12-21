@@ -45,3 +45,11 @@
     name: 'validateContactForm',
     on: settings['validateContactForm']})
 }}
+
+{{ forms.lightswitchField({
+    label: 'Share user IPs with Google?'|t('recaptcha'),
+    instructions: 'Enable to include requesting user IP addresses when making [siteverify](https://developers.google.com/recaptcha/docs/verify#api_request) requests.'|t('recaptcha'),
+    id: 'shareUserIPs',
+    name: 'shareUserIPs',
+    on: settings['shareUserIPs']})
+}}
