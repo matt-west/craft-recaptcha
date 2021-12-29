@@ -36,7 +36,7 @@ class RecaptchaController extends Controller
 		if ($verified) {
 			return Controller::run('/' . $action, func_get_args()); // run the intended action (add / to force it's scope to be outside the plugin) with all the params passed to this controller action
 		} else {
-			Craft::$app->getSession()->setError('Unable to verify your submission.');
+            Craft::$app->getSession()->setError(Craft::t('site', 'Unable to verify your submission.'));
 			return null;
 		}
 	}
