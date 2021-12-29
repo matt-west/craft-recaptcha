@@ -9,14 +9,14 @@
  */
 
 /**
- * Craft reCAPTCHA en Translation
+ * Craft reCAPTCHA italian Translation
  *
  * Returns an array with the string to be translated (as passed to `Craft::t('craft-recaptcha', '...')`) as
  * the key, and the translation as the value.
  *
  * http://www.yiiframework.com/doc-2.0/guide-tutorial-i18n.html
  *
- * @author    Matt West
+ * @author    Andrea Pasotti (https://www.andreapasottiweb.com)
  * @package   CraftRecaptcha
  * @since     1.0.0
  */
