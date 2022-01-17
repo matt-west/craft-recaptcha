@@ -38,8 +38,8 @@ class CraftRecaptchaService extends Component
     public function render(array $options = [])
     {
         $settings = CraftRecaptcha::$plugin->getSettings();
-
-        \Craft::$app->view->registerJsFile('https://www.google.com/recaptcha/api.js');
+        $currentLanguage = (\Craft::$app->getSites()->getCurrentSite()->language)? \Craft::$app->getSites()->getCurrentSite()->language :'en' ;
+        \Craft::$app->view->registerJsFile('https://www.google.com/recaptcha/api.js?&hl='. $currentLanguage);
 
         $defaultOptions = [
             'siteKey' => $settings->getSiteKey()
