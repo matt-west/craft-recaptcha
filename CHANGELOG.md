@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.5.3 - 2022-01-17
+### Added
+- Added Italian translations. (Thanks [andreapasotti](https://github.com/matt-west/craft-recaptcha/pull/31)!)
+- Use local language when requesting reCAPTCHA script. (Thanks [parwinderD4D](https://github.com/matt-west/craft-recaptcha/pull/28))
+- Send user IP to Google with verification requests. Optional. Default = false. (Thanks [domstubbs](https://github.com/matt-west/craft-recaptcha/pull/30))
+
 ## 1.5.2 - 2021-06-01
 ### Added
 - Added Guzzle 7 compatibility. (Thanks [bossanova808](https://github.com/bossanova808)!)
