@@ -56,6 +56,13 @@ class Settings extends Model
      */
     public $validateContactForm = true;
 
+    /**
+     * Share user IP addresses with Google
+     *
+     * @var bool
+     */
+    public $shareUserIPs = false;
+
 
 
     // Public Methods
