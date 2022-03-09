@@ -23,9 +23,12 @@
  */
 
 return [
-
+    
     "siteKey" => "",
     "secretKey" => "",
+    "siteKeyV3" => "",
+    "secretKeyV3" => "",
+    "threshold" => "0.5",
     "validateContactForm" => true,
     "shareUserIPs" => false,
 

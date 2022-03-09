@@ -35,6 +35,36 @@
     suggestEnvVars: true})
 }}
 
+{{ forms.autosuggestField({
+    label: 'Site Key v3'|t('recaptcha'),
+    instructions: 'Enter your v3 reCAPTCHA site key.'|t('recaptcha'),
+    id: 'siteKeyV3',
+    name: 'siteKeyV3',
+    value: settings['siteKeyV3'],
+    required: false,
+    suggestEnvVars: true})
+}}
+
+{{ forms.autosuggestField({
+    label: 'Secret Key v3'|t('recaptcha'),
+    instructions: 'Enter your v3 reCAPTCHA secret key.'|t('recaptcha'),
+    id: 'secretKeyV3',
+    name: 'secretKeyV3',
+    value: settings['secretKeyV3'],
+    required: false,
+    suggestEnvVars: true})
+}}
+
+{{ forms.textField({
+    label: 'v3 Score Threshold'|t('recaptcha'),
+    instructions: 'Enter the threshold (value between 0.0 - 1.0) that should determine whether the response score is rejected.'|t('recaptcha'),
+    id: 'threshold',
+    name: 'threshold',
+    value: settings['threshold'],
+    size: 'halfwidth',
+    required: false})
+}}
+
 
 <hr>
 

@@ -34,66 +34,111 @@ class Settings extends Model
 {
     // Public Properties
     // =========================================================================
-
+    
     /**
      * Site key model attribute
      *
      * @var string
      */
     public $siteKey = '';
-
+    
     /**
      * Secret key model attribute
      *
      * @var string
      */
     public $secretKey = '';
-
+    
+    /**
+     * v3 Site key model attribute
+     *
+     * @var string
+     */
+    public $siteKeyV3 = '';
+    
+    /**
+     * v3 Secret key model attribute
+     *
+     * @var string
+     */
+    public $secretKeyV3 = '';
+    
+    /**
+     * v3 response score threshold
+     *
+     * @var string
+     */
+    public $threshold = '';
+    
     /**
      * Validate ContactForm submissions
      *
      * @var bool
      */
     public $validateContactForm = true;
-
+    
     /**
      * Share user IP addresses with Google
      *
      * @var bool
      */
     public $shareUserIPs = false;
-
-
-
+    
+    
+    
     // Public Methods
     // =========================================================================
-
-  /**
-   * @return string the parsed site key (e.g. 'XXXXXXXXXXX')
-   */
-  public function getSiteKey(): string
-  {
-    return Craft::parseEnv($this->siteKey);
-  }
-
-  /**
-   * @return string the parsed secret key (e.g. 'XXXXXXXXXXX')
-   */
-  public function getSecretKey(): string
-  {
-    return Craft::parseEnv($this->secretKey);
-  }
-
-  public function behaviors()
-  {
-    return [
-        'parser' => [
-            'class' => EnvAttributeParserBehavior::class,
-            'attributes' => ['siteKey', 'secretKey'],
-        ],
-    ];
-  }
-
+    
+    /**
+     * @return string the parsed site key (e.g. 'XXXXXXXXXXX')
+     */
+    public function getSiteKey(): string
+    {
+        return Craft::parseEnv($this->siteKey);
+    }
+    
+    /**
+     * @return string the parsed secret key (e.g. 'XXXXXXXXXXX')
+     */
+    public function getSecretKey(): string
+    {
+        return Craft::parseEnv($this->secretKey);
+    }
+    
+    /**
+     * @return string the parsed v3 site key (e.g. 'XXXXXXXXXXX')
+     */
+    public function getSiteKeyV3(): string
+    {
+        return Craft::parseEnv($this->siteKeyV3);
+    }
+    
+    /**
+     * @return string the parsed v3 secret key (e.g. 'XXXXXXXXXXX')
+     */
+    public function getSecretKeyV3(): string
+    {
+        return Craft::parseEnv($this->secretKeyV3);
+    }
+    
+    /**
+     * @return float the v3 response score threshold (e.g. '0.5')
+     */
+    public function getThreshold(): float
+    {
+        return floatval($this->threshold);
+    }
+    
+    public function behaviors()
+    {
+        return [
+            'parser' => [
+                'class' => EnvAttributeParserBehavior::class,
+                'attributes' => ['siteKey', 'secretKey', 'siteKeyV3', 'secretKeyV3'],
+            ],
+        ];
+    }
+    
     /**
      * Returns the validation rules for attributes.
      *
@@ -109,6 +154,9 @@ class Settings extends Model
         return [
             ['siteKey', 'string'],
             ['secretKey', 'string'],
+            ['siteKeyV3', 'string'],
+            ['secretKeyV3', 'string'],
+            ['threshold', 'string'],
             [['siteKey', 'secretKey'], 'required']
         ];
     }
