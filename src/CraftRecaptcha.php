@@ -48,7 +48,7 @@ class CraftRecaptcha extends Plugin
 {
     // Static Properties
     // =========================================================================
-
+    
     /**
      * Static property that is an instance of this plugin class so that it can be accessed via
      * CraftRecaptcha::$plugin
@@ -56,20 +56,20 @@ class CraftRecaptcha extends Plugin
      * @var CraftRecaptcha
      */
     public static $plugin;
-
+    
     // Public Properties
     // =========================================================================
-
+    
     /**
      * To execute your plugin’s migrations, you’ll need to increase its schema version.
      *
      * @var string
      */
     public $schemaVersion = '1.0.0';
-
+    
     // Public Methods
     // =========================================================================
-
+    
     /**
      * Set our $plugin static property to this class so that it can be accessed via
      * CraftRecaptcha::$plugin
@@ -85,7 +85,7 @@ class CraftRecaptcha extends Plugin
     {
         parent::init();
         self::$plugin = $this;
-
+        
         // Register our variables
         Event::on(
             CraftVariable::class,
@@ -96,7 +96,7 @@ class CraftRecaptcha extends Plugin
                 $variable->set('recaptcha', CraftRecaptchaVariable::class);
             }
         );
-
+        
         // Do something after we're installed
         Event::on(
             Plugins::class,
@@ -169,10 +169,10 @@ class CraftRecaptcha extends Plugin
             __METHOD__
         );
     }
-
+    
     // Protected Methods
     // =========================================================================
-
+    
     /**
      * Creates and returns the model used to store the plugin’s settings.
      *
@@ -182,7 +182,7 @@ class CraftRecaptcha extends Plugin
     {
         return new Settings();
     }
-
+    
     /**
      * Returns the rendered settings HTML, which will be inserted into the content
      * block on the settings page.

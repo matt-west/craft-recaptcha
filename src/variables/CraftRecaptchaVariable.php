@@ -30,7 +30,7 @@ class CraftRecaptchaVariable
 {
     // Public Methods
     // =========================================================================
-
+    
     /**
      * Render the reCAPTCHA widget.
      *
