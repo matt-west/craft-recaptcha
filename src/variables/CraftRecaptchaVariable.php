@@ -41,13 +41,20 @@ class CraftRecaptchaVariable
      */
     public function render(array $options = [])
     {
-      return CraftRecaptcha::$plugin->craftRecaptchaService->render($options);
+        return CraftRecaptcha::$plugin->craftRecaptchaService->render($options);
     }
-
+    
     public function sitekey()
     {
-      $settings = CraftRecaptcha::$plugin->getSettings();
-
-      return $settings->getSiteKey();
+        $settings = CraftRecaptcha::$plugin->getSettings();
+        
+        return $settings->getSiteKey();
+    }
+    
+    public function sitekeyV3()
+    {
+        $settings = CraftRecaptcha::$plugin->getSettings();
+        
+        return $settings->getSiteKeyV3();
     }
 }

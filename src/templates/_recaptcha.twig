@@ -1,1 +1,15 @@
-<div class="g-recaptcha" id="{{id}}" {% for key, value in options %}data-{{ key }}="{{ value }}" {% endfor %}></div>
+{% if(options.siteKeyV3 is not empty and recaptchaValid is not defined) %}
+    {# a V3 site key is available and a verify attempt has not yet been made #}
+    <input type="hidden" name="recaptcha_response" id="recaptchaV3Response">
+    {% js %}
+        grecaptcha.ready(function() {
+            grecaptcha.execute('{{ options.siteKeyV3 }}', {action: '{{ options.recaptchaAction }}'}).then(function(token) {
+                var recaptchaResponse = document.getElementById('recaptchaV3Response');
+                recaptchaResponse.value = token;
+            });
+        });
+    {% endjs  %}
+{% else %}
+    {# either no V3 site key or a verify attempt has been made and failed #}
+    <div class="g-recaptcha" id="{{id}}" {% for key, value in options %}data-{{ key }}="{{ value }}" {% endfor %}></div>
+{% endif %}
