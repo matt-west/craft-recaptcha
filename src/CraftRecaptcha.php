@@ -107,26 +107,41 @@ class CraftRecaptcha extends Plugin
                 }
             }
         );
-
+        
         // Set up contact form hook.
         $settings = CraftRecaptcha::$plugin->getSettings();
-
+        
         if (class_exists(Submission::class) && $settings->validateContactForm) {
             Event::on(Submission::class, Submission::EVENT_BEFORE_VALIDATE, function(ModelEvent $e) {
                 /** @var Submission $submission */
                 $submission = $e->sender;
-
-                $captcha = Craft::$app->getRequest()->getParam('g-recaptcha-response');
-
-                $validates = CraftRecaptcha::$plugin->craftRecaptchaService->verify($captcha);
-
+                
+                $settings = CraftRecaptcha::$plugin->getSettings();
+                
+                //Determine reCaptcha version and gather response
+                $version = 3;
+                $captcha = Craft::$app->getRequest()->getParam('recaptcha_response');
+                if ($captcha === null) {
+                    //no V3 param exists, check V2...
+                    $version = 2;
+                    $captcha = Craft::$app->getRequest()->getParam('g-recaptcha-response');
+                }
+                
+                //if neither version params exist, assume spam
+                if ($captcha === null) {
+                    $validates = false;
+                }
+                else {
+                    $validates = CraftRecaptcha::$plugin->craftRecaptchaService->verify($captcha, $version, 'contact', $settings->getThreshold() ?? 0.5);
+                }
+                
                 if (!$validates) {
                     $submission->addError('recaptcha', Craft::t('recaptcha', 'Please verify you are human.'));
                     $e->isValid = false;
                 }
             });
         }
-
+        
         /**
          * Logging in Craft involves using one of the following methods:
          *
