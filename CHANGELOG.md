@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased]
+### Added
+- Support for using reCAPTCHA v3 with v2 as a fallback.
+
 ## 1.5.3 - 2022-01-17
 ### Added
 - Added Italian translations. (Thanks [andreapasotti](https://github.com/matt-west/craft-recaptcha/pull/31)!)
