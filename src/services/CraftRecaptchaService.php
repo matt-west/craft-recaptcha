@@ -70,7 +70,15 @@ class CraftRecaptchaService extends Component
         echo $html;
     }
     
-    public function verify($data, $version, $action = '', $threshold)
+    /**
+     * @param string $data
+     * @param integer $version Either 2 or 3
+     * @param string $action See https://developers.google.com/recaptcha/docs/v3#actions
+     * @param float|string $threshold See https://developers.google.com/recaptcha/docs/v3#interpreting_the_score
+     * @return bool
+     * @throws GuzzleHttp\Exception\GuzzleException
+     */
+    public function verify(string $data, int $version, string $action = '', $threshold = 0.5)
     {
         $base = "https://www.google.com/recaptcha/api/siteverify";
         
