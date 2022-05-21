@@ -163,7 +163,7 @@ class CraftRecaptcha extends Plugin
      *
      * @return \craft\base\Model|null
      */
-    protected function createSettingsModel() : ?Model
+    protected function createSettingsModel() : ? \craft\base\Model
     {
         return new Settings();
     }
