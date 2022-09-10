@@ -1,44 +1,44 @@
 {
-    "name": "matt-west/craft-recaptcha",
-    "description": "Integrate Google’s reCAPTCHA into your forms.",
-    "type": "craft-plugin",
-    "version": "1.5.3",
-    "keywords": [
-        "craft",
-        "cms",
-        "craftcms",
-        "craft-plugin",
-        "craft recaptcha"
-    ],
-    "support": {
-        "docs": "https://github.com/matt-west/craft-recaptcha/blob/master/README.md",
-        "issues": "https://github.com/matt-west/craft-recaptcha/issues"
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Matt West",
-            "homepage": "https://mattwest.io"
-        }
-    ],
-    "require": {
-        "craftcms/cms": "^4.0.3",
-        "guzzlehttp/guzzle": "^6.3 || ^7.2"
-    },
-    "autoload": {
-        "psr-4": {
-          "mattwest\\craftrecaptcha\\": "src/"
-        }
-    },
-    "extra": {
-        "name": "reCAPTCHA",
-        "handle": "recaptcha",
-        "hasCpSettings": true,
-        "hasCpSection": false,
-        "changelogUrl": "https://raw.githubusercontent.com/matt-west/craft-recaptcha/master/CHANGELOG.md",
-        "components": {
-            "craftRecaptchaService": "mattwest\\craftrecaptcha\\services\\CraftRecaptchaService"
-        },
-        "class": "mattwest\\craftrecaptcha\\CraftRecaptcha"
+  "name": "matt-west/craft-recaptcha",
+  "description": "Integrate Google’s reCAPTCHA into your forms.",
+  "type": "craft-plugin",
+  "version": "2.0.1",
+  "keywords": [
+    "craft",
+    "cms",
+    "craftcms",
+    "craft-plugin",
+    "craft recaptcha"
+  ],
+  "support": {
+    "docs": "https://github.com/matt-west/craft-recaptcha/blob/master/README.md",
+    "issues": "https://github.com/matt-west/craft-recaptcha/issues"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Matt West",
+      "homepage": "https://mattwest.design"
     }
+  ],
+  "require": {
+    "craftcms/cms": "^4.0.3",
+    "guzzlehttp/guzzle": "^6.3 || ^7.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "mattwest\\craftrecaptcha\\": "src/"
+    }
+  },
+  "extra": {
+    "name": "reCAPTCHA",
+    "handle": "recaptcha",
+    "hasCpSettings": true,
+    "hasCpSection": false,
+    "changelogUrl": "https://raw.githubusercontent.com/matt-west/craft-recaptcha/master/CHANGELOG.md",
+    "components": {
+      "craftRecaptchaService": "mattwest\\craftrecaptcha\\services\\CraftRecaptchaService"
+    },
+    "class": "mattwest\\craftrecaptcha\\CraftRecaptcha"
+  }
 }
