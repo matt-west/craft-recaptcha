@@ -10,7 +10,7 @@ use yii\web\Response;
 
 class RecaptchaController extends Controller
 {
-	protected $allowAnonymous = true;
+	protected array|bool|int $allowAnonymous = true;
 	
 	/**
 	 * Handle verifying the submission and then pass it on to the relevant action (or not).
