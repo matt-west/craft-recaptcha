@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.0.2 - 2022-09-16
+
+### Added
+
+- Fixed a bug impacting some users of Craft 4 (Thanks [honsa](https://github.com/matt-west/craft-recaptcha/pull/38)!)
+
 ## 2.0.1 - 2022-09-09
 
 ### Added

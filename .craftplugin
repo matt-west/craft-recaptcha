@@ -1,7 +1,7 @@
 {
   "pluginName": "Craft reCAPTCHA",
   "pluginDescription": "Integrate Google’s reCAPTCHA into your forms.",
-  "pluginVersion": "2.0.1",
+  "pluginVersion": "2.0.2",
   "pluginAuthorName": "Matt West",
   "pluginVendorName": "mattwest",
   "pluginAuthorUrl": "https://mattwest.design",
