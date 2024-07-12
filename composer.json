@@ -2,7 +2,7 @@
   "name": "matt-west/craft-recaptcha",
   "description": "Integrate Google’s reCAPTCHA into your forms.",
   "type": "craft-plugin",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "keywords": [
     "craft",
     "cms",
@@ -22,7 +22,7 @@
     }
   ],
   "require": {
-    "craftcms/cms": "^4.0.3",
+    "craftcms/cms": "^4.0.3|^5.0.0",
     "guzzlehttp/guzzle": "^6.3 || ^7.2"
   },
   "autoload": {
